@@ -1,93 +1,233 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Veltron Autos</title>
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07070a">
+<title>Veltron Autos | Drive The Extraordinary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0b0b0d;--card:#17171b;--gold:#d4af37;--tx:#f4f1ea;--mut:#a39f94;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-*{box-sizing:border-box}html{scroll-behavior:smooth;color-scheme:dark}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 Georgia,serif}
-h1,h2,h3,button,nav a{font-family:"Trebuchet MS",Arial,sans-serif}h2{color:var(--gold);letter-spacing:2px;text-transform:uppercase}
-#ld{position:fixed;inset:0;background:#000;z-index:99;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .8s}
-#ld svg{width:110px;animation:sp 1.6s linear infinite}@keyframes sp{to{transform:rotate(360deg)}}#ld b{color:var(--gold);letter-spacing:6px}
-#menu{position:fixed;top:calc(8px + env(safe-area-inset-top,0px));left:8px;z-index:50;background:var(--gold);color:#000;border:0;border-radius:8px;padding:8px 12px;font-size:20px}
-nav{position:fixed;top:0;left:0;bottom:0;width:230px;background:#050506;border-right:1px solid #333;padding:70px 20px 20px;display:flex;flex-direction:column;gap:6px;z-index:40;transform:translateX(-100%);transition:.3s}
-nav.o{transform:none}nav a{color:var(--tx);text-decoration:none;padding:12px;border-radius:8px}nav a:hover{background:#222;color:var(--gold)}nav .lg{color:var(--gold);font-weight:bold;letter-spacing:3px;margin-bottom:12px}
-main{padding:64px 16px 90px;max-width:1000px;margin:auto}@media(min-width:900px){nav{transform:none}#menu{display:none}main{margin-left:250px;max-width:none;padding-right:30px}}
-.hero{min-height:75vh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:14px;padding:24px;border-radius:16px;background:radial-gradient(circle at 80% 30%,#4a3a0a,transparent 55%),linear-gradient(135deg,#000,#1b1b20);background-attachment:fixed;border:1px solid #333}
-.hero h1{font-size:clamp(34px,8vw,64px);margin:0;color:var(--gold)}.btn{background:var(--gold);color:#000;border:0;border-radius:8px;padding:11px 16px;font-weight:bold;text-decoration:none;cursor:pointer;display:inline-block;font-size:15px}.btn.o{background:none;color:var(--gold);border:1px solid var(--gold)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}.card{background:var(--card);border:1px solid #2c2c33;border-radius:14px;padding:14px;cursor:pointer}.card:hover{border-color:var(--gold)}
-.car{height:90px;border-radius:10px;background:linear-gradient(135deg,#2a2208,#0c0c0e);display:flex;align-items:center;justify-content:center;font-size:40px;color:var(--gold);margin-bottom:8px}
-.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:24px 0}.stats div{background:var(--card);padding:16px;border-radius:12px;text-align:center}.stats b{font-size:30px;color:var(--gold);display:block}
-.rv{display:flex;overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;padding-bottom:8px}.rv div{min-width:260px;background:var(--card);padding:14px;border-radius:12px;scroll-snap-align:start}
-table{width:100%;border-collapse:collapse}td,th{border-bottom:1px solid #333;padding:8px;text-align:left}.sc{overflow-x:auto}
-details{background:var(--card);margin:8px 0;padding:12px;border-radius:10px}summary{cursor:pointer;color:var(--gold)}
-.fl{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;z-index:45;animation:pl 1.8s infinite}
-#wa{right:16px;background:#25d366;--c:37,211,102}#cl{left:16px;background:var(--gold);--c:212,175,55}@media(min-width:900px){#cl{left:266px}}
-@keyframes pl{0%{box-shadow:0 0 0 0 rgba(var(--c),.7)}100%{box-shadow:0 0 0 26px rgba(var(--c),0)}}
-#md{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:70;display:none;overflow:auto;padding:16px}#md>div{background:var(--card);max-width:560px;margin:auto;padding:18px;border-radius:14px;border:1px solid var(--gold)}
-#mt{position:fixed;top:calc(8px + env(safe-area-inset-top,0px));right:8px;z-index:50;background:#222;color:var(--gold);border:1px solid var(--gold);border-radius:8px;padding:8px 12px}
-footer{text-align:center;color:var(--mut);padding:30px 0;border-top:1px solid #333;margin-top:40px}input,textarea{width:100%;padding:11px;margin:5px 0;background:#0e0e11;color:var(--tx);border:1px solid #333;border-radius:8px;font:inherit}
+:root{--line:rgba(212,175,55,.28);--gold:#d4af37;--gg:linear-gradient(135deg,#f9eaa0,#d4af37 45%,#8a6d1d);--tx:#efeae0;--mut:#a29d92}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;color-scheme:dark}
+body{background:radial-gradient(circle at 20% 0,rgba(212,175,55,.08),transparent 40%) #07070a;color:var(--tx);font:300 16px/1.8 Montserrat,Arial,sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(212,175,55,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,.035) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:-1}
+h1,h2,h3,h4{font-family:Cinzel,Georgia,serif;font-weight:500;line-height:1.25}
+.gt{background:var(--gg);-webkit-background-clip:text;background-clip:text;color:transparent}
+a{color:inherit}
+/* loader */
+#ld{position:fixed;inset:0;background:#000;z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;transition:opacity .9s}
+#ld svg{width:170px;height:170px;filter:drop-shadow(0 0 22px rgba(212,175,55,.55))}
+#ld b{font-family:Cinzel;letter-spacing:12px;font-size:20px}
+#ld i{width:180px;height:2px;background:#222;overflow:hidden;position:relative}
+#ld i::after{content:"";position:absolute;inset:0;background:var(--gg);animation:ldb 1.8s ease-in-out forwards}
+@keyframes ldb{from{transform:translateX(-100%)}to{transform:none}}
+/* header */
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(7,7,10,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.hb{max-width:1240px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 16px;flex-wrap:wrap}
+.bl{display:flex;align-items:center;gap:10px;text-decoration:none}
+.bl svg{width:46px;height:46px;filter:drop-shadow(0 0 8px rgba(212,175,55,.5))}
+.bl b{font-family:Cinzel;letter-spacing:5px;font-size:17px}
+nav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;order:3;width:100%}
+nav::-webkit-scrollbar{display:none}
+nav a{white-space:nowrap;text-decoration:none;text-transform:uppercase;letter-spacing:2px;font-size:11px;font-weight:600;padding:10px 14px;border-bottom:2px solid transparent;color:var(--mut)}
+nav a:hover,nav a.on{color:var(--gold);border-color:var(--gold)}
+.ic{background:none;border:1px solid var(--line);color:var(--gold);border-radius:50%;width:38px;height:38px;cursor:pointer;font-size:16px}
+@media(min-width:900px){nav{order:0;width:auto}nav a{font-size:12px;padding:14px 18px}}
+main{padding-top:112px}@media(min-width:900px){main{padding-top:70px}}
+.w{max-width:1240px;margin:auto;padding:70px 18px}
+/* hero */
+.hero{min-height:calc(100vh - 70px);display:flex;align-items:center;background-size:cover;background-position:center;background-attachment:fixed;margin-top:-112px;padding-top:112px;position:relative}
+@media(min-width:900px){.hero{margin-top:-70px;padding-top:70px}}
+@media(max-width:900px){.fx{background-attachment:scroll!important}}
+.hero .w{width:100%}
+.eb{letter-spacing:6px;font-size:11px;font-weight:600;color:var(--gold);text-transform:uppercase}
+.hero h1{font-size:clamp(40px,9vw,92px);margin:14px 0}
+.hero p{max-width:560px;color:#d8d3c7;font-size:17px;margin-bottom:28px}
+.btn{display:inline-block;background:var(--gg);color:#000;border:0;padding:14px 26px;text-transform:uppercase;letter-spacing:2px;font:600 12px Montserrat,sans-serif;text-decoration:none;cursor:pointer;transition:.3s;box-shadow:0 0 0 rgba(212,175,55,0)}
+.btn:hover{box-shadow:0 0 28px rgba(212,175,55,.5);transform:translateY(-2px)}
+.btn.o{background:none;color:var(--gold);border:1px solid var(--gold)}
+.btn.o:hover{background:rgba(212,175,55,.12)}
+.bw{display:flex;gap:12px;flex-wrap:wrap}
+/* headings */
+.sh{text-align:center;margin-bottom:44px}
+.sh h2{font-size:clamp(26px,5vw,42px);margin-top:8px}
+.sh::after{content:"";display:block;width:90px;height:1px;background:var(--gg);margin:18px auto 0;box-shadow:0 0 12px var(--gold)}
+.sub{max-width:760px;margin:0 auto 34px;text-align:center;color:var(--mut)}
+/* marquee */
+.mq{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0b0b0f;padding:18px 0}
+.mq div{display:flex;gap:56px;width:max-content;animation:mq 40s linear infinite;font-family:Cinzel;letter-spacing:5px;color:var(--gold);white-space:nowrap}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* stats */
+.st{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+@media(min-width:800px){.st{grid-template-columns:repeat(4,1fr)}}
+.st div{background:#09090c;padding:34px 12px;text-align:center;text-transform:uppercase;letter-spacing:2px;font-size:11px;color:var(--mut)}
+.st b{display:block;font:500 clamp(34px,6vw,52px) Cinzel;background:var(--gg);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:0}
+/* grids / cards */
+.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:22px}
+.g2{display:grid;grid-template-columns:1fr;gap:34px;align-items:center}@media(min-width:850px){.g2{grid-template-columns:1fr 1fr}}
+.cd{background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--line);position:relative;overflow:hidden;transition:.4s}
+.cd:hover{border-color:var(--gold);transform:translateY(-6px);box-shadow:0 18px 50px rgba(0,0,0,.6),0 0 30px rgba(212,175,55,.12)}
+.cd .p{padding:20px}
+.im{aspect-ratio:16/10;overflow:hidden;background:linear-gradient(135deg,#2a2208,#0c0c0e)}
+.im img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s}
+.cd:hover .im img{transform:scale(1.09)}
+.ft{padding:26px}
+.ft h3{font-size:18px;color:var(--gold);margin-bottom:8px}
+.ft p,.p p{color:var(--mut);font-size:14px}
+.ft .n{font:500 34px Cinzel;color:rgba(212,175,55,.25)}
+.pr{color:var(--gold);font-family:Cinzel;font-size:15px;margin:6px 0}
+.sp{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;font-size:12px;margin:12px 0;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sp span{color:var(--mut)}.sp b{display:block;color:var(--tx);font-weight:400}
+.cv{position:relative}.cv::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.85))}
+.cv h3{position:absolute;left:18px;bottom:14px;z-index:2;font-size:19px}
+/* reveal */
+.r{opacity:0;transform:translateY(34px);transition:opacity 1s,transform 1s}.r.in{opacity:1;transform:none}
+/* slider */
+.sw{position:relative}
+.sl{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:6px 2px}
+.sl::-webkit-scrollbar{display:none}
+.sl>div{min-width:min(320px,82%);scroll-snap-align:start;padding:26px}
+.sa{display:flex;gap:10px;justify-content:center;margin-top:20px}
+/* table */
+.tb{overflow-x:auto;border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;min-width:480px}
+th{font:600 11px Montserrat;letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-align:left;padding:16px;background:#0c0c10}
+td{padding:15px 16px;border-top:1px solid var(--line);font-size:14px}
+/* faq */
+details{border:1px solid var(--line);margin-bottom:10px;background:rgba(255,255,255,.03)}
+summary{cursor:pointer;padding:18px 22px;color:var(--gold);font-family:Cinzel;font-size:15px}
+details p{padding:0 22px 20px;color:var(--mut);font-size:14px}
+/* modal */
+#md{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:150;display:none;overflow:auto;padding:16px;backdrop-filter:blur(6px)}
+#mb{max-width:680px;margin:20px auto;background:#0c0c10;border:1px solid var(--gold);box-shadow:0 0 60px rgba(212,175,55,.2)}
+#mb .p{padding:24px}
+/* floating */
+.fl{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom,0px));width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:27px;text-decoration:none;z-index:120;animation:pl 1.8s infinite}
+#wa{right:18px;background:#25d366;--c:37,211,102}#cl{left:18px;background:var(--gold);--c:212,175,55}
+@keyframes pl{0%{box-shadow:0 0 0 0 rgba(var(--c),.75),0 0 20px rgba(var(--c),.6)}100%{box-shadow:0 0 0 28px rgba(var(--c),0),0 0 20px rgba(var(--c),.6)}}
+/* form + footer */
+input,textarea{width:100%;padding:14px;margin:6px 0;background:#0a0a0d;color:var(--tx);border:1px solid var(--line);font:300 15px Montserrat,sans-serif}
+input:focus,textarea:focus{outline:0;border-color:var(--gold)}
+iframe{width:100%;height:220px;border:0;filter:grayscale(.7) contrast(1.1);display:block}
+footer{border-top:1px solid var(--line);background:#050507;text-align:center;padding:50px 18px 30px;margin-top:40px}
+footer p{color:var(--mut);font-size:13px}
+.wm{margin-top:30px;letter-spacing:6px;font-size:11px;color:var(--gold);text-transform:uppercase}
 </style></head><body>
-<div id="ld"><svg viewBox="0 0 100 100" fill="none" stroke="#d4af37"><circle cx="50" cy="50" r="46" stroke-width="4"/><circle cx="50" cy="50" r="12" stroke-width="3"/><path d="M50 4v34M50 62v34M4 50h34M62 50h34M17 17l25 25M58 58l25 25M83 17L58 42M42 58L17 83" stroke-width="3"/></svg><b>VELTRON AUTOS</b></div>
-<button id="menu" onclick="nv.classList.toggle('o')">☰</button><button id="mt" onclick="mute()">🔊</button>
-<nav id="nv"><div class="lg">VELTRON AUTOS</div><a href="#home">Home</a><a href="#collections">Collections</a><a href="#about">About Us</a><a href="#faqs">FAQs</a><a href="#contact">Contacts &amp; Locations</a></nav>
+
+<svg width="0" height="0" style="position:absolute"><defs>
+<linearGradient id="gd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff3b0"/><stop offset=".5" stop-color="#d4af37"/><stop offset="1" stop-color="#7a5c14"/></linearGradient>
+<filter id="gw" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<symbol id="lg" viewBox="0 0 120 120">
+ <circle cx="60" cy="60" r="57" fill="none" stroke="url(#gd)" stroke-width="2.2" filter="url(#gw)"/>
+ <circle cx="60" cy="60" r="52" fill="none" stroke="#d4af37" stroke-width="1" stroke-dasharray="1.5 5" opacity=".8"><animateTransform attributeName="transform" type="rotate" from="0 60 60" to="360 60 60" dur="24s" repeatCount="indefinite"/></circle>
+ <circle cx="60" cy="60" r="46" fill="none" stroke="url(#gd)" stroke-width="3.5" stroke-dasharray="26 8 6 8" filter="url(#gw)"><animateTransform attributeName="transform" type="rotate" from="360 60 60" to="0 60 60" dur="9s" repeatCount="indefinite"/></circle>
+ <circle cx="60" cy="60" r="38" fill="#050507" stroke="#d4af37" stroke-width=".8" opacity=".9"/>
+ <g stroke="url(#gd)" stroke-width="2.6" stroke-linecap="round" filter="url(#gw)"><animateTransform attributeName="transform" type="rotate" from="0 60 60" to="360 60 60" dur="5s" repeatCount="indefinite"/>
+  <path d="M60 24V48M60 72V96M24 60H48M72 60H96M34.5 34.5L50 50M70 70L85.5 85.5M85.5 34.5L70 50M50 70L34.5 85.5"/>
+  <g fill="#fff3b0" stroke="none"><circle cx="60" cy="22" r="2.4"/><circle cx="60" cy="98" r="2.4"/><circle cx="22" cy="60" r="2.4"/><circle cx="98" cy="60" r="2.4"/></g></g>
+ <circle cx="60" cy="60" r="13" fill="#050507" stroke="url(#gd)" stroke-width="2.2"/>
+ <path d="M52.5 54L60 68L67.5 54" fill="none" stroke="#f9eaa0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" filter="url(#gw)"/>
+</symbol></defs></svg>
+
+<div id="ld"><svg viewBox="0 0 120 120"><use href="#lg"/></svg><b class="gt">VELTRON AUTOS</b><i></i></div>
+
+<header><div class="hb">
+ <a class="bl" href="#home"><svg viewBox="0 0 120 120"><use href="#lg"/></svg><b class="gt">VELTRON</b></a>
+ <nav><a href="#home">Home</a><a href="#collections">Collections</a><a href="#about">About Us</a><a href="#faqs">FAQs</a><a href="#contact">Contacts &amp; Locations</a></nav>
+ <button id="mt" class="ic" onclick="mute()" aria-label="Mute voice">🔊</button>
+</div></header>
 <main id="app"></main>
-<a id="wa" class="fl" target="_blank" rel="noopener">💬</a><a id="cl" class="fl" href="tel:+2347065205154">📞</a>
+<a id="wa" class="fl" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+<a id="cl" class="fl" href="tel:+2347065205154" aria-label="Call">📞</a>
 <div id="md"><div id="mb"></div></div>
+
 <script>
-var PH="2347065205154",EM="apexenterprise6520@gmail.com",R=1550,muted=false,spoke=false;
-var B=[["Lamborghini","V12 / V10 / Hybrid","Revuelto|1015|608,Huracán Tecnica|631|330,Huracán STO|631|335,Huracán Evo Spyder|631|290,Aventador SVJ|759|517,Urus Performante|657|260,Urus SE|789|258,Sián FKP 37|819|3600,Countach LPI 800-4|800|2640,Gallardo LP570|562|160"],
-["Ferrari","V8 / V12 Hybrid","296 GTB|819|322,SF90 Stradale|986|524,812 Competizione|819|600,Roma|612|245,Portofino M|612|250,Purosangue|715|400,F8 Tributo|710|283,488 Pista|710|350,LaFerrari|949|3500,Daytona SP3|829|2250"],
-["Bugatti","8.0L W16","Chiron|1479|3000,Chiron Super Sport|1578|3900,Chiron Pur Sport|1479|3500,Veyron 16.4|1001|1900,Veyron Super Sport|1200|2400,Divo|1479|5800,Centodieci|1578|9000,Bolide|1825|4700,Mistral|1578|5000,Tourbillon|1800|3800"],
-["Rolls-Royce","6.75L V12","Ghost|563|350,Cullinan|563|380,Spectre|577|420,Wraith|624|330,Dawn|563|340,Black Badge Ghost|592|400,Black Badge Cullinan|592|450,Boat Tail|563|28000,Ghost Series II|563|360,Cullinan Series II|592|410"],
-["Bentley","W12 / V8 / Hybrid","Continental GT Speed|650|275,Flying Spur Speed|626|285,Bentayga EWB|542|290,Bentayga Speed|641|280,Mulliner Batur|730|2000,Continental GTC|542|260,Mulsanne Speed|530|350,Bacalar|650|2000,Flying Spur Hybrid|536|225,Bentayga S|542|200"],
-["Porsche","Flat-6 / V8 / Electric","911 Turbo S|640|230,911 GT3 RS|518|250,911 Dakar|473|230,Taycan Turbo GT|1092|230,Cayenne Turbo GT|631|200,Panamera Turbo S|690|200,718 Cayman GT4 RS|493|150,Macan Turbo Electric|630|105,918 Spyder|887|1700,Carrera GT|603|1500"],
-["McLaren","Twin-turbo V8 / V6 Hybrid","720S|710|300,750S|740|330,Artura|671|240,GT|612|210,765LT|755|400,Senna|789|1000,P1|903|1500,Speedtail|1036|2200,570S|562|200,Elva|804|1700"],
-["Aston Martin","V8 / V12","DB12|671|250,Vantage|656|192,DBX707|697|245,Valkyrie|1160|3500,Vanquish|824|430,DBS Superleggera|715|330,Valhalla|937|800,DB11 V12|630|220,Victor|836|4000,Vantage F1 Edition|656|210"],
-["Mercedes G-Wagon","4.0L Twin-turbo V8","G63 AMG|577|180,G63 Edition 55|577|190,G550|416|140,Maybach G650 Landaulet|630|1000,G500 4x4²|416|250,G580 EQ|579|160,G63 Mansory|850|350,G400d|325|130,Brabus 800 Adventure|789|400,G63 Magno|577|195"],
-["Tesla","Dual / Tri-motor Electric","Model S Plaid|1020|90,Model X Plaid|1020|100,Model 3 Performance|510|55,Model Y Performance|456|60,Cybertruck Cyberbeast|845|100,Model S Long Range|670|80,Model X Long Range|670|85,Cybertruck AWD|600|80,Model 3 Long Range|340|45,Roadster|1000|250"],
-["Corvette","6.2L V8 / Hybrid","Z06|670|110,E-Ray|655|105,Stingray|495|70,ZR1|1064|175,Grand Sport|490|80,C7 Z06|650|85,Stingray Convertible|495|75,Stingray Z51|495|72,Z06 Convertible|670|120,ZR1X|1250|210"],
-["Range Rover","3.0L I6 / 4.4L V8","Autobiography|523|200,SV|606|240,Sport SV|626|215,Velar Dynamic|335|75,Evoque Autobiography|296|60,Sport Autobiography|523|130,LWB|523|215,Sport Dynamic SE|395|100,Sport SVR|575|150,SV Carbon|606|260"],
-["Cadillac Escalade","6.2L V8 / Electric","Escalade-V|682|150,ESV Sport|420|100,Escalade IQ|750|130,Premium Luxury|420|95,ESV Platinum|420|115,Sport Platinum|420|110,Escalade-V ESV|682|155,Luxury|420|85,Escalade IQL|750|140,Sport|420|90"],
-["Lexus","V8 / Hybrid","LC 500|471|100,LFA|553|450,RX 500h|366|65,LX 600 F Sport|409|105,LS 500h|354|85,GX 550|349|80,RC F|472|70,LM 350h|250|100,LC 500 Convertible|471|105,ES 350|302|45"],
-["Rolls-Royce Phantom","6.75L V12","Phantom VIII|563|460,Phantom EWB|563|500,Phantom Series II|563|480,Phantom Drophead|453|450,Phantom Coupé|453|400,Phantom Tranquillity|563|600,Phantom Scintilla|563|650,Phantom Black Badge EWB|563|520,Phantom VII|453|380,Phantom Oribe|563|560"]];
-var IN="Hand-stitched leather, starlight-style ambient lighting, premium surround audio, massage seats, digital cockpit";
-var $=function(s){return document.querySelector(s)},app=$("#app");
-function slug(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/-$/,"")}
-function wa(m){return "https://wa.me/"+PH+"?text="+encodeURIComponent(m)}
-$("#wa").href=wa("Hello Veltron Autos, I want to enquire about a luxury car.");$("#wa").target="_blank";
-function cars(i){return B[i][2].split(",").map(function(s,k){var p=s.split("|"),hp=+p[1],u=+p[2]*1000;return{n:B[i][0]+" "+p[0],y:2021+(k*3)%5,hp:hp,usd:u,e:B[i][1],t:(2+1400/hp).toFixed(1),top:Math.round(Math.min(420,150+hp*.3))}})}
-function fm(c){return "$"+c.usd.toLocaleString()+" / ₦"+(c.usd*R).toLocaleString()}
-var rn=["Chinedu O.|Lagos","Amara N.|Abuja","James W.|London","Fatima B.|Dubai","Tunde A.|Port Harcourt","Sarah M.|Houston","Ibrahim K.|Kano","Emeka U.|Enugu","Olivia R.|Manchester","Hassan A.|Abu Dhabi","Ngozi E.|Lagos","David L.|Atlanta","Kemi S.|Ibadan","Omar F.|Dubai","Chioma I.|Abuja","Michael T.|Toronto","Segun B.|Lagos","Aisha Y.|Accra","Peter C.|Berlin","Zainab H.|Abuja"];
-var rc=["Ferrari 296 GTB","G63 AMG","Rolls-Royce Ghost","Bentley Bentayga","Porsche 911 Turbo S"];
-function reviews(){return rn.map(function(r,i){var p=r.split("|"),s=i%5==4?4:5;return '<div><b style="color:var(--gold)">'+"★".repeat(s)+"☆".repeat(5-s)+'</b><p>"Smooth process from booking to delivery. My '+rc[i%5]+' arrived exactly as described."</p><small>'+p[0]+', '+p[1]+'</small></div>'}).join("")}
-var FQ=[["How do I buy a car?","Browse Collections, tap a car and click Book via WhatsApp or Email. Our team confirms availability, sends a full inspection report and an invoice."],["Which payment methods are accepted?","Bank transfer, verified escrow, and approved financing partners. We never ask for payment into personal accounts; confirm details with our team first."],["Do you ship internationally?","Yes. We ship to West Africa, the USA, UK, UAE and more. See the Shipping section on Home for rates."],["How long does delivery take?","3–7 days within Nigeria and 14–21 days internationally."],["Who handles customs and clearing?","We prepare documents and coordinate clearing; duties and taxes are paid by the buyer according to the destination country's rules."],["Is there an inspection report?","Every car comes with a multi-point inspection report and history check."],["Is there a warranty?","Warranty terms depend on the car and are stated on your invoice."],["What is your return policy?","Please ask us before purchase; terms are written into your sales agreement."],["Can I book a test drive?","Yes, at our Abuja, Lagos and Dubai locations by appointment."],["Do you offer financing?","Financing options are available through partners, subject to approval."],["Can I reserve a car?","Yes, a refundable-terms deposit can reserve a car; terms are agreed in writing."],["Can I trade in my car?","Contact us with your car details for a valuation."]];
-function home(){return '<section class="hero"><small style="color:var(--gold);letter-spacing:4px">VELTRON AUTOS</small><h1>Drive The Extraordinary</h1><p style="max-width:480px;color:var(--mut)">Verified luxury and supercars, delivered worldwide.</p><a class="btn" href="#collections">Shop Collections</a></section>'+
-'<div class="stats"><div><b data-n="500">0</b>+ Cars Delivered</div><div><b data-n="15">0</b>Luxury Brands</div><div><b data-n="12">0</b>Countries Served</div><div><b data-n="98">0</b>% Happy Clients</div></div>'+
-'<h2>Client Reviews</h2><div class="rv">'+reviews()+'</div>'+
-'<h2>Who We Are</h2><p>Veltron Autos is a global luxury car dealership connecting discerning buyers with the world’s finest automobiles, from Italian supercars to British grand tourers and electric flagships. Based in Abuja with branches in Lagos and Dubai, we handle sourcing, inspection, shipping and paperwork end to end.</p>'+
-'<h2>Why Choose Us</h2><p>✔ Verified cars ✔ International shipping ✔ Secure payment ✔ Inspection report on every car ✔ Warranty ✔ Doorstep delivery</p>'+
-'<h2>Shipping</h2><p>We deliver worldwide. Customs and clearing: we prepare export documents and coordinate clearance; the buyer pays destination duties and taxes.</p><div class="sc"><table><tr><th>Destination</th><th>Price</th><th>Time</th></tr><tr><td>Abuja</td><td>Free</td><td>3–7 days</td></tr><tr><td>Lagos</td><td>₦150,000</td><td>3–7 days</td></tr><tr><td>Nigeria nationwide</td><td>₦250,000</td><td>3–7 days</td></tr><tr><td>West Africa</td><td>$800–$1,200</td><td>14–21 days</td></tr><tr><td>USA / UK / UAE</td><td>$2,500–$4,500</td><td>14–21 days</td></tr></table></div>'}
-function coll(){return '<h2>Collections</h2><div class="grid">'+B.map(function(b,i){return '<a class="card" href="#b-'+slug(b[0])+'" style="text-decoration:none;color:inherit"><div class="car">🏎</div><b>'+b[0]+'</b><br><small style="color:var(--mut)">10 cars</small></a>'}).join("")+'</div>'}
-function brand(i){var cs=cars(i);return '<a href="#collections" style="color:var(--gold)">← Collections</a><h2>'+B[i][0]+'</h2><div class="grid">'+cs.map(function(c,k){return '<div class="card" onclick="show('+i+','+k+')"><div class="car">🏎</div><b>'+c.n+'</b><br>'+c.y+'<br><span style="color:var(--gold)">'+fm(c)+'</span><br><small>'+c.hp+' hp · 0–100 '+c.t+'s</small></div>'}).join("")+'</div>'}
-var cur=null;
-function show(i,k){var c=cars(i)[k];cur=c;var m="Hello Veltron Autos, I want to book the "+c.n+" "+c.y+" priced at "+fm(c)+". Please send me full details and availability.";
-var d=c.n+", "+c.y+", priced at "+fm(c)+". It delivers "+c.hp+" horsepower from its "+c.e+" powertrain, reaching 100 kilometres per hour in about "+c.t+" seconds. "+"Inside, expect "+IN+". It holds value well and offers strong performance and prestige for its price.";
-$("#mb").innerHTML='<div class="car">🏎</div><h3>'+c.n+' ('+c.y+')</h3><p style="color:var(--gold)">'+fm(c)+'</p><p>Horsepower: '+c.hp+' hp<br>Engine: '+c.e+'<br>0–100 km/h: ~'+c.t+'s<br>Top speed: ~'+c.top+' km/h<br>Interior: '+IN+'</p><p>'+d+'</p><button class="btn o" onclick="pp()" id="pb">⏸ Pause voice</button> <button class="btn o" onclick="md.style.display=\'none\';speechSynthesis.cancel()">Close</button><p><a class="btn" target="_blank" href="'+wa(m)+'">Book via WhatsApp</a> <a class="btn o" href="mailto:'+EM+'?subject='+encodeURIComponent("Booking: "+c.n+" "+c.y)+'&body='+encodeURIComponent(m)+'">Book via Email</a></p><small style="color:var(--mut)">Specs and prices are indicative; confirm with our team.</small>';
+const PH="2347065205154",EM="apexenterprise6520@gmail.com",RATE=1550;
+/* Unsplash photo IDs. Swap any ID here if a photo does not match its brand. */
+const PIC=["1503376780353-7e6692767b70","1544636331-e26879cd4d9b","1583121274602-3e2820c69888","1618843479313-40f8afb4b4d8","1614162692292-7ac56d7f7f1e","1617788138017-80ad40651399","1606664515524-ed2f786a0bd6","1494976388531-d1058494cdd8","1580273916550-e323be2ae537","1555215695-3004980ad54e","1492144534655-ae79c964c9d7","1568605117036-5fe5e7bab0b7"];
+const img=(i,w=900)=>`https://images.unsplash.com/photo-${PIC[i%PIC.length]}?auto=format&fit=crop&w=${w}&q=70`;
+const PEOPLE=["1507003211169-0a1dd7228f2d","1573496359142-b8d87734a5a2","1560250097-0b93528c311a"].map(id=>`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=600&q=70`);
+const B=[
+["Lamborghini","V12 / V10 / Hybrid","Born in Sant'Agata Bolognese, Lamborghini builds loud, dramatic, razor-sharp supercars and the world's most exciting super-SUV.","Revuelto|1015|608,Huracán Tecnica|631|330,Huracán STO|631|335,Huracán Evo Spyder|631|290,Aventador SVJ|759|517,Urus Performante|657|260,Urus SE|789|258,Sián FKP 37|819|3600,Countach LPI 800-4|800|2640,Gallardo LP570|562|160"],
+["Ferrari","V8 / V12 Hybrid","Ferrari is motorsport royalty: every road car carries Formula 1 engineering, Italian styling and a sound that is pure emotion.","296 GTB|819|322,SF90 Stradale|986|524,812 Competizione|819|600,Roma|612|245,Portofino M|612|250,Purosangue|715|400,F8 Tributo|710|283,488 Pista|710|350,LaFerrari|949|3500,Daytona SP3|829|2250"],
+["Bugatti","8.0L Quad-turbo W16","Bugatti is the pinnacle of hypercar engineering, where record-breaking speed meets hand-built craftsmanship from Molsheim.","Chiron|1479|3000,Chiron Super Sport|1578|3900,Chiron Pur Sport|1479|3500,Veyron 16.4|1001|1900,Veyron Super Sport|1200|2400,Divo|1479|5800,Centodieci|1578|9000,Bolide|1825|4700,Mistral|1578|5000,Tourbillon|1800|3800"],
+["Rolls-Royce","6.75L Twin-turbo V12","Rolls-Royce is the benchmark for silent, effortless luxury, with bespoke interiors made by hand to each owner's taste.","Ghost|563|350,Cullinan|563|380,Spectre|577|420,Wraith|624|330,Dawn|563|340,Black Badge Ghost|592|400,Black Badge Cullinan|592|450,Boat Tail|563|28000,Ghost Series II|563|360,Cullinan Series II|592|410"],
+["Bentley","W12 / V8 / Hybrid","Bentley blends British craftsmanship with grand-touring performance, wrapping real wood, leather and power in understated elegance.","Continental GT Speed|650|275,Flying Spur Speed|626|285,Bentayga EWB|542|290,Bentayga Speed|641|280,Mulliner Batur|730|2000,Continental GTC|542|260,Mulsanne Speed|530|350,Bacalar|650|2000,Flying Spur Hybrid|536|225,Bentayga S|542|200"],
+["Porsche","Flat-6 / V8 / Electric","Porsche pairs everyday usability with track-bred precision, and has a legendary reputation for holding its value.","911 Turbo S|640|230,911 GT3 RS|518|250,911 Dakar|473|230,Taycan Turbo GT|1092|230,Cayenne Turbo GT|631|200,Panamera Turbo S|690|200,718 Cayman GT4 RS|493|150,Macan Turbo Electric|630|105,918 Spyder|887|1700,Carrera GT|603|1500"],
+["McLaren","Twin-turbo V8 / V6 Hybrid","McLaren brings Formula 1 know-how to the road with carbon-fibre chassis, extreme lightness and razor-sharp handling.","720S|710|300,750S|740|330,Artura|671|240,GT|612|210,765LT|755|400,Senna|789|1000,P1|903|1500,Speedtail|1036|2200,570S|562|200,Elva|804|1700"],
+["Aston Martin","V8 / V12","Aston Martin is the British grand tourer of choice: beautiful lines, thunderous engines and a famous cinematic heritage.","DB12|671|250,Vantage|656|192,DBX707|697|245,Valkyrie|1160|3500,Vanquish|824|430,DBS Superleggera|715|330,Valhalla|937|800,DB11 V12|630|220,Victor|836|4000,Vantage F1 Edition|656|210"],
+["Mercedes G-Wagon","4.0L Twin-turbo V8","The G-Class is an icon: military-grade toughness, boxy presence and AMG firepower, with a cabin as plush as any limousine.","G63 AMG|577|180,G63 Edition 55|577|190,G550|416|140,Maybach G650 Landaulet|630|1000,G500 4x4²|416|250,G580 EQ|579|160,G63 Mansory|850|350,G400d|325|130,Brabus 800 Adventure|789|400,G63 Magno|577|195"],
+["Tesla","Dual / Tri-motor Electric","Tesla leads electric luxury with instant torque, over-the-air updates, minimalist interiors and a huge charging network.","Model S Plaid|1020|90,Model X Plaid|1020|100,Model 3 Performance|510|55,Model Y Performance|456|60,Cybertruck Cyberbeast|845|100,Model S Long Range|670|80,Model X Long Range|670|85,Cybertruck AWD|600|80,Model 3 Long Range|340|45,Roadster|1000|250"],
+["Corvette","6.2L V8 / Hybrid","Corvette is America's supercar: mid-engine exotic performance at a fraction of European prices.","Z06|670|110,E-Ray|655|105,Stingray|495|70,ZR1|1064|175,Grand Sport|490|80,C7 Z06|650|85,Stingray Convertible|495|75,Stingray Z51|495|72,Z06 Convertible|670|120,ZR1X|1250|210"],
+["Range Rover","3.0L I6 / 4.4L V8","Range Rover defines the luxury SUV: commanding presence, refined interiors and go-anywhere capability.","Autobiography|523|200,SV|606|240,Sport SV|626|215,Velar Dynamic|335|75,Evoque Autobiography|296|60,Sport Autobiography|523|130,LWB|523|215,Sport Dynamic SE|395|100,Sport SVR|575|150,SV Carbon|606|260"],
+["Cadillac Escalade","6.2L V8 / Electric","The Escalade is the statement full-size luxury SUV: huge space, big presence, curved OLED screens and a plush ride.","Escalade-V|682|150,ESV Sport|420|100,Escalade IQ|750|130,Premium Luxury|420|95,ESV Platinum|420|115,Sport Platinum|420|110,Escalade-V ESV|682|155,Luxury|420|85,Escalade IQL|750|140,Sport|420|90"],
+["Lexus","V8 / Hybrid","Lexus is known for superb build quality, hushed cabins, hybrid efficiency and class-leading reliability.","LC 500|471|100,LFA|553|450,RX 500h|366|65,LX 600 F Sport|409|105,LS 500h|354|85,GX 550|349|80,RC F|472|70,LM 350h|250|100,LC 500 Convertible|471|105,ES 350|302|45"],
+["Rolls-Royce Phantom","6.75L Twin-turbo V12","The Phantom is the flagship of Rolls-Royce: the ultimate expression of bespoke, chauffeur-driven luxury.","Phantom VIII|563|460,Phantom EWB|563|500,Phantom Series II|563|480,Phantom Drophead|453|450,Phantom Coupé|453|400,Phantom Tranquillity|563|600,Phantom Scintilla|563|650,Phantom Black Badge EWB|563|520,Phantom VII|453|380,Phantom Oribe|563|560"]];
+const INT=["Hand-stitched Nappa leather, ambient starlight lighting, premium surround audio, massage seats, digital cockpit","Carbon-fibre trim, heated and ventilated sport seats, panoramic roof, driver-focused digital display","Open-pore wood veneer, diamond-quilted seats, rear-seat entertainment, four-zone climate control","Alcantara and leather cabin, adaptive sport seats, head-up display, concert-grade sound system"];
+const $=s=>document.querySelector(s),app=$("#app");
+const slug=s=>s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/-$/,"");
+const wa=m=>`https://wa.me/${PH}?text=${encodeURIComponent(m)}`;
+$("#wa").href=wa("Hello Veltron Autos, I want to enquire about a luxury car.");
+const cars=i=>B[i][3].split(",").map((s,k)=>{const p=s.split("|"),hp=+p[1],u=+p[2]*1000;return{i,k,n:B[i][0]+" "+p[0],y:2021+(k*3)%5,hp,usd:u,e:B[i][1],t:(2+1400/hp).toFixed(1),top:Math.round(Math.min(420,150+hp*.3)),pic:(i*3+k)%PIC.length,int:INT[k%4]}});
+const fm=c=>"$"+c.usd.toLocaleString()+" / ₦"+(c.usd*RATE).toLocaleString();
+function desc(c){const tier=c.usd>=1e6?"an ultra-exclusive collector's piece whose rarity tends to protect, and often grow, its value":c.usd>=3e5?"a halo-level luxury performance car with consistently strong resale demand":c.usd>=1e5?"a premium performance and luxury car that balances thrill with real daily usability":"an accessible way into the brand, with a premium feel at a sensible price";
+return `${B[c.i][2]} The ${c.n} produces ${c.hp} hp from its ${c.e} setup, sprints from 0 to 100 km/h in about ${c.t} seconds and reaches roughly ${c.top} km/h. It is ${tier}. At ${fm(c)} you are paying for serious engineering, hand-finished materials, brand heritage and the full Veltron package of inspection report, warranty and delivery.`}
+const bookMsg=c=>`Hello Veltron Autos, I want to book the ${c.n} ${c.y} priced at ${fm(c)}. Please send me full details and availability.`;
+const sh=(e,t)=>`<div class="sh r"><div class="eb">${e}</div><h2 class="gt">${t}</h2></div>`;
+const IM=(i,w)=>`<div class="im"><img loading="lazy" src="${img(i,w||900)}" alt="" onerror="this.remove()"></div>`;
+/* reviews */
+const RV=["Chinedu O.|Lagos|Ferrari 296 GTB","Amara N.|Abuja|Mercedes G63 AMG","James W.|London|Bentley Continental GT","Fatima B.|Dubai|Rolls-Royce Cullinan","Tunde A.|Port Harcourt|Range Rover Autobiography","Sarah M.|Houston|Porsche 911 Turbo S","Ibrahim K.|Kano|Cadillac Escalade-V","Emeka U.|Enugu|Lamborghini Urus","Olivia R.|Manchester|McLaren 720S","Hassan A.|Abu Dhabi|Aston Martin DBX707","Ngozi E.|Lagos|Lexus LX 600","David L.|Atlanta|Corvette Z06","Kemi S.|Ibadan|Tesla Model X Plaid","Omar F.|Dubai|Rolls-Royce Phantom","Chioma I.|Abuja|Range Rover SV","Michael T.|Toronto|Porsche Taycan Turbo GT","Segun B.|Lagos|Bentley Bentayga","Aisha Y.|Accra|Mercedes G63 AMG","Peter C.|Berlin|Aston Martin DB12","Zainab H.|Abuja|Ferrari Roma"];
+const RT=["Flawless from the first WhatsApp message to the day it arrived. My CAR was exactly as described and the inspection report was extremely thorough.","The team in CITY was professional, patient and transparent. Paperwork and shipping were handled for me, and the CAR looks even better in person.","I was nervous buying a car like this remotely, but Veltron made it easy. The CAR arrived spotless and right on schedule.","Outstanding service. They answered every question, sent detailed photos and videos, and delivered my CAR to my door.","Great car and a smooth process overall. Delivery took a little longer than first estimated, but communication was constant and the CAR is wonderful."];
+const reviews=()=>RV.map((r,i)=>{const p=r.split("|"),s=i%5==4?4:5;return `<div class="cd"><div style="color:var(--gold);letter-spacing:3px">${"★".repeat(s)}${"☆".repeat(5-s)}</div><p style="margin:12px 0;color:#d8d3c7;font-size:14px">“${RT[i%5].replace("CAR",p[2]).replace("CITY",p[1])}”</p><b style="font-family:Cinzel;color:var(--gold);font-size:14px">${p[0]}</b><div style="font-size:12px;color:var(--mut)">${p[1]} · ${p[2]}</div></div>`}).join("");
+/* pages */
+const WHY=[["Verified Cars","Every vehicle is traced through its history, VIN and ownership documents before it is listed. We only sell cars we would be proud to own, so you never inherit hidden surprises."],["International Shipping","We ship to West Africa, the USA, UK, UAE and beyond using trusted, insured carriers, and we keep you updated at every stage until the car arrives."],["Secure Payment","Pay through verified bank transfer or protected escrow. We never ask you to pay into personal accounts, and every payment is documented with an official invoice."],["Inspection Report","A detailed multi-point report covers engine, gearbox, suspension, brakes, electronics, bodywork and interior, with photos, so you buy with complete confidence."],["Warranty","Eligible cars include warranty cover, with the terms written clearly on your invoice. If something is not right, a real team stands behind the sale."],["Doorstep Delivery","From a showroom in Abuja to your driveway in Lagos or a home abroad, we manage transport and handover so the car simply arrives, polished and ready to drive."]];
+const whyCards=()=>`<div class="g">${WHY.map((w,i)=>`<div class="cd ft r"><div class="n">0${i+1}</div><h3>${w[0]}</h3><p>${w[1]}</p></div>`).join("")}</div>`;
+function home(){return `<section class="hero fx" style="background-image:linear-gradient(180deg,rgba(7,7,10,.5),rgba(7,7,10,.96)),url(${img(4,1800)})"><div class="w"><div class="eb">The House Of Luxury Motoring</div><h1 class="gt">Drive The<br>Extraordinary</h1><p>Hand-selected supercars, grand tourers and luxury SUVs from the world's most coveted marques, inspected, insured and delivered to your door anywhere in the world.</p><div class="bw"><a class="btn" href="#collections">Shop Collections</a><a class="btn o" target="_blank" href="${wa("Hello Veltron Autos, I want to enquire about a luxury car.")}">Talk To An Advisor</a></div></div></section>
+<div class="mq"><div>${[...B,...B].map(b=>`<span>${b[0].toUpperCase()}</span><span>◆</span>`).join("")}</div></div>
+<div class="w"><div class="st r"><div><b data-n="500">0</b>+ Cars Delivered</div><div><b data-n="15">0</b>Luxury Brands</div><div><b data-n="12">0</b>Countries Served</div><div><b data-n="98">0</b>% Happy Clients</div></div></div>
+<div class="w" style="padding-top:20px"><div class="g2"><div class="r">${IM(2,1000)}</div><div class="r"><div class="eb">Who We Are</div><h2 class="gt" style="margin:10px 0 18px;font-size:34px">A Global Home For Luxury Cars</h2><p style="color:var(--mut);margin-bottom:14px">Veltron Autos is an international luxury car dealership connecting discerning buyers with the finest automobiles on earth, from Italian supercars and British grand tourers to German performance icons and electric flagships.</p><p style="color:var(--mut);margin-bottom:14px">Headquartered in Abuja with branches in Lagos and Dubai, we handle the entire journey: sourcing, verification, inspection, documentation, shipping, customs coordination and final delivery. You choose the car; we take care of everything else.</p><p style="color:var(--mut);margin-bottom:22px">Our promise is simple: transparency, authenticity and white-glove service, whether you are buying your first luxury car or adding to a collection.</p><a class="btn o" href="#about">Our Story</a></div></div></div>
+<div class="w">${sh("Why Choose Us","The Veltron Difference")}${whyCards()}</div>
+<div class="w" style="padding-top:20px">${sh("How It Works","Four Steps To Your Dream Car")}<div class="g">${[["Choose","Browse 150 cars across 15 marques and listen to a full voice briefing on any model."],["Book","Tap Book via WhatsApp or Email with the details of your chosen car already written for you."],["Inspect &amp; Pay","Receive the inspection report, confirm details and pay securely against an official invoice."],["Ship &amp; Deliver","We insure, ship and clear your car, then hand it over at your door."]].map((s,i)=>`<div class="cd ft r"><div class="n">0${i+1}</div><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join("")}</div></div>
+<div class="w" style="padding-top:20px">${sh("Featured Marques","Iconic Names")}<div class="g">${[0,1,2,3,5,6].map(i=>`<a class="cd cv r" href="#b-${slug(B[i][0])}" style="text-decoration:none">${IM(i*3)}<h3 class="gt">${B[i][0]}</h3></a>`).join("")}</div><p style="text-align:center;margin-top:30px"><a class="btn" href="#collections">View All 15 Brands</a></p></div>
+<div class="w">${sh("Client Voices","Trusted By Collectors Worldwide")}<div class="sw r"><div class="sl" id="sl">${reviews()}</div><div class="sa"><button class="ic" onclick="sl.scrollBy({left:-320,behavior:'smooth'})">‹</button><button class="ic" onclick="sl.scrollBy({left:320,behavior:'smooth'})">›</button></div></div></div>
+<div class="w" style="padding-top:20px">${sh("Shipping","Worldwide Delivery, Handled")}<p class="sub r">Veltron Autos delivers across Nigeria and around the globe. Every car travels fully insured, is carefully prepared before transit, and is delivered with updates at each stage. Choose door-to-door delivery or collection from one of our showrooms.</p><div class="tb r"><table><tr><th>Destination</th><th>Delivery Price</th><th>Delivery Time</th></tr><tr><td>Abuja</td><td>Free</td><td>3–7 days</td></tr><tr><td>Lagos</td><td>₦150,000</td><td>3–7 days</td></tr><tr><td>Nigeria Nationwide</td><td>₦250,000</td><td>3–7 days</td></tr><tr><td>West Africa</td><td>$800 – $1,200</td><td>14–21 days</td></tr><tr><td>USA / UK / UAE</td><td>$2,500 – $4,500</td><td>14–21 days</td></tr></table></div>
+<div class="g" style="margin-top:26px"><div class="cd ft r"><h3>Customs &amp; Clearing</h3><p>We prepare the export paperwork (invoice, title, bill of lading, inspection report) and coordinate with licensed clearing agents at the destination port. Import duties, VAT and port charges are set by the destination country and paid by the buyer; we explain every cost before shipping so there are no surprises.</p></div><div class="cd ft r"><h3>Insured Transit</h3><p>Cars travel in enclosed or container transport and are photographed before loading and after arrival. Ask our team about full-value insurance during transit.</p></div></div></div>
+<div class="w" style="text-align:center"><div class="cd ft r"><h2 class="gt" style="margin-bottom:12px">Ready To Own Something Extraordinary?</h2><p style="margin-bottom:22px">Speak to a Veltron advisor now. We reply fast.</p><a class="btn" target="_blank" href="${wa("Hello Veltron Autos, I want to enquire about a luxury car.")}">Chat On WhatsApp</a></div></div>`}
+const coll=()=>`<div class="w">${sh("Collections","15 Legendary Marques")}<p class="sub r">Choose a brand to explore ten hand-picked models, each with full specifications, pricing in Naira and US dollars, and a voice briefing.</p><div class="g">${B.map((b,i)=>`<a class="cd cv r" href="#b-${slug(b[0])}" style="text-decoration:none">${IM(i*3)}<h3 class="gt">${b[0]}</h3></a>`).join("")}</div></div>`;
+function brandPg(i){const cs=cars(i);return `<div class="w"><a href="#collections" style="color:var(--gold);text-decoration:none">← All Collections</a><div class="sh" style="margin-top:24px"><div class="eb">Marque</div><h2 class="gt">${B[i][0]}</h2></div><p class="sub">${B[i][2]}</p><div class="g">${cs.map(c=>`<div class="cd r"><div onclick="show(${i},${c.k})" style="cursor:pointer">${IM(c.pic)}</div><div class="p"><h3 onclick="show(${i},${c.k})" style="cursor:pointer;font-size:18px">${c.n} <span style="color:var(--mut);font-size:13px">${c.y}</span></h3><div class="pr">${fm(c)}</div><div class="sp"><div><span>Horsepower</span><b>${c.hp} hp</b></div><div><span>0–100 km/h</span><b>${c.t} s</b></div><div><span>Engine</span><b>${c.e}</b></div><div><span>Top speed</span><b>${c.top} km/h</b></div></div><p><b style="color:var(--tx);font-weight:400">Interior:</b> ${c.int}.</p><p style="margin:12px 0"><b style="color:var(--gold);font-weight:400">Why it is valuable:</b> ${desc(c)}</p><div class="bw"><a class="btn" target="_blank" href="${wa(bookMsg(c))}">Book via WhatsApp</a><a class="btn o" href="mailto:${EM}?subject=${encodeURIComponent("Booking: "+c.n+" "+c.y)}&body=${encodeURIComponent(bookMsg(c))}">Book via Email</a></div><p style="margin-top:12px"><a href="javascript:show(${i},${c.k})" style="color:var(--gold)">▶ Listen to voice briefing</a></p></div></div>`).join("")}</div></div>`}
+let cur=null;
+function show(i,k){const c=cars(i)[k];cur=c;const d=`${c.n}, ${c.y}, priced at ${fm(c).replace("/","or")}. ${desc(c)} Inside, expect ${c.int}.`;
+$("#mb").innerHTML=`${IM(c.pic,1200)}<div class="p"><h3 class="gt" style="font-size:24px">${c.n} (${c.y})</h3><div class="pr">${fm(c)}</div><div class="sp"><div><span>Horsepower</span><b>${c.hp} hp</b></div><div><span>0–100 km/h</span><b>${c.t} s</b></div><div><span>Engine</span><b>${c.e}</b></div><div><span>Top speed</span><b>${c.top} km/h</b></div></div><p><b style="color:var(--tx);font-weight:400">Interior:</b> ${c.int}.</p><p style="margin:12px 0">${desc(c)}</p><div class="bw" style="margin-bottom:12px"><button class="btn o" id="pb" onclick="pp()">⏸ Pause Voice</button><button class="btn o" onclick="closeM()">Close</button></div><div class="bw"><a class="btn" target="_blank" href="${wa(bookMsg(c))}">Book via WhatsApp</a><a class="btn o" href="mailto:${EM}?subject=${encodeURIComponent("Booking: "+c.n+" "+c.y)}&body=${encodeURIComponent(bookMsg(c))}">Book via Email</a></div><p style="font-size:11px;margin-top:14px">Specifications and prices are indicative. Our team confirms final details before booking.</p></div>`;
 $("#md").style.display="block";say(d)}
-function say(t){try{speechSynthesis.cancel();if(muted)return;var u=new SpeechSynthesisUtterance(t);u.rate=.95;speechSynthesis.speak(u)}catch(e){}}
-function pp(){if(speechSynthesis.paused){speechSynthesis.resume();$("#pb").textContent="⏸ Pause voice"}else if(speechSynthesis.speaking){speechSynthesis.pause();$("#pb").textContent="▶ Play voice"}else if(cur){$("#pb").textContent="⏸ Pause voice"}}
+const closeM=()=>{$("#md").style.display="none";try{speechSynthesis.cancel()}catch(e){}};
+let muted=false;
+function say(t){try{speechSynthesis.cancel();if(muted)return;const u=new SpeechSynthesisUtterance(t);u.rate=.95;speechSynthesis.speak(u)}catch(e){}}
+function pp(){try{if(speechSynthesis.paused){speechSynthesis.resume();$("#pb").textContent="⏸ Pause Voice"}else if(speechSynthesis.speaking){speechSynthesis.pause();$("#pb").textContent="▶ Play Voice"}else if(cur){say(desc(cur));$("#pb").textContent="⏸ Pause Voice"}}catch(e){}}
 function mute(){muted=!muted;$("#mt").textContent=muted?"🔇":"🔊";if(muted)try{speechSynthesis.cancel()}catch(e){}}
-function about(){return '<h2>About Us</h2><p>Veltron Autos is a global luxury car dealership. Every car is inspected, documented and delivered with care. Our specialists in Abuja, Lagos and Dubai guide you from first enquiry to doorstep delivery.</p><div class="grid"><div class="car" style="height:120px">👥 Our Team</div><div class="car" style="height:120px">🏛 Our Showroom</div></div><p style="color:var(--mut)">Team and showroom photos can be added here.</p>'}
-function faqs(){return '<h2>FAQs</h2>'+FQ.map(function(f){return '<details><summary>'+f[0]+'</summary><p>'+f[1]+'</p></details>'}).join("")}
-function contact(){var L=[["Main Office","Plot 12, Adetokunbo Ademola Crescent, Wuse 2, Abuja, FCT, Nigeria"],["Branch 1","Admiralty Way, Lekki Phase 1, Lagos, Nigeria"],["Branch 2","Business Bay, Dubai, UAE"]];
-return '<h2>Contacts &amp; Locations</h2><p><a class="btn" target="_blank" href="'+wa("Hello Veltron Autos, I want to enquire about a luxury car.")+'">WhatsApp</a> <a class="btn o" href="tel:+'+PH+'">Call</a> <a class="btn o" href="mailto:'+EM+'">Email</a></p><p>Hours: Mon–Sat 9am–8pm · Sun 12pm–6pm</p>'+
-'<div class="grid">'+L.map(function(l){return '<div class="card" style="cursor:default"><b>'+l[0]+'</b><p>'+l[1]+'</p><a class="btn o" target="_blank" href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(l[1])+'">Open in Google Maps</a></div>'}).join("")+'</div>'+
-'<h3>Send a message</h3><div id="cf"><input id="cn" placeholder="Name"><input id="ce" placeholder="Email"><input id="cp" placeholder="Phone"><textarea id="cm" rows="4" placeholder="Message"></textarea><button class="btn" onclick="sendF()">Send</button></div>'}
-function sendF(){var b="Name: "+cn.value+"\nEmail: "+ce.value+"\nPhone: "+cp.value+"\n\n"+cm.value;location.href="mailto:"+EM+"?subject="+encodeURIComponent("Website enquiry from "+cn.value)+"&body="+encodeURIComponent(b)}
-function count(){document.querySelectorAll("[data-n]").forEach(function(e){var n=+e.dataset.n,c=0,s=Math.ceil(n/60),t=setInterval(function(){c=Math.min(n,c+s);e.textContent=c;if(c>=n)clearInterval(t)},25)})}
-function route(){var h=(location.hash||"#home").slice(1),x;nv.classList.remove("o");
-if(h.indexOf("b-")==0){x=B.findIndex(function(b){return "b-"+slug(b[0])==h});app.innerHTML=x>=0?brand(x):coll()}
-else app.innerHTML=({home:home,collections:coll,about:about,faqs:faqs,contact:contact}[h]||home)();
-app.innerHTML+='<footer>@veltron autos</footer>';window.scrollTo(0,0);count()}
+const about=()=>`<div class="w">${sh("About Us","The Story Of Veltron Autos")}<div class="g2"><div class="r">${IM(9,1000)}</div><div class="r"><h3 class="gt" style="margin-bottom:14px">Who We Are</h3><p style="color:var(--mut);margin-bottom:14px">Veltron Autos was founded on a simple belief: buying an extraordinary car should feel as extraordinary as driving one. We are a global luxury car dealership serving private buyers, collectors, executives and businesses across Africa, Europe, the Middle East and North America.</p><p style="color:var(--mut);margin-bottom:14px">Our specialists source cars directly from authorised dealers, trusted collectors and private owners, then verify, inspect, prepare and present each one with complete honesty. Every listing is backed by documents, photographs and a detailed report.</p><p style="color:var(--mut)">With offices in Abuja, Lagos and Dubai, we combine local trust with international reach, so the car you choose arrives safely wherever you live.</p></div></div></div>
+<div class="w" style="padding-top:0">${sh("Why Choose Us","What You Can Expect")}${whyCards()}</div>
+<div class="w" style="padding-top:0">${sh("Our Showroom","Where Cars Become Collections")}<div class="g">${[0,5,10].map(i=>`<div class="cd r">${IM(i+2)}</div>`).join("")}</div></div>
+<div class="w" style="padding-top:0">${sh("Our Team","The People Behind Veltron")}<div class="g">${[["Executive Director","Leadership and global partnerships"],["Head of Client Experience","Bookings, advice and aftercare"],["Chief Vehicle Inspector","Inspection reports and quality control"]].map((t,i)=>`<div class="cd r"><div class="im" style="aspect-ratio:1/1"><img loading="lazy" src="${PEOPLE[i]}" alt="" onerror="this.remove()"></div><div class="p" style="text-align:center"><h3 style="color:var(--gold);font-size:16px">${t[0]}</h3><p>${t[1]}</p></div></div>`).join("")}</div></div>`;
+const FQ=[["How do I buy a car from Veltron Autos?","Browse Collections, choose a car, and tap Book via WhatsApp or Email. An advisor confirms availability, sends the inspection report and an invoice, and guides you through payment and delivery."],["How do I book a car?","Every car has two booking buttons. Each opens a pre-written message with the car name, year and price, so you only need to press send."],["Which payment methods do you accept?","Bank transfer, verified escrow and approved financing partners. Our team confirms the correct account details with you directly."],["Is my payment secure?","Yes. We issue an official invoice for every sale and never ask you to pay into a personal account. Always confirm bank details with our team first."],["Can I pay in instalments or get financing?","Financing options are available through partner institutions, subject to approval. Ask an advisor about your situation."],["Do you ship internationally?","Yes. We ship to West Africa, the USA, UK, UAE and many other destinations."],["How much does shipping cost?","Free within Abuja, ₦150,000 to Lagos and ₦250,000 nationwide. West Africa is $800–$1,200 and USA, UK and UAE are $2,500–$4,500."],["How long does delivery take?","Typically 3–7 days within Nigeria and 14–21 days internationally, depending on route and customs."],["Who handles customs and clearing?","We prepare the export documents and coordinate with licensed clearing agents. Destination duties and taxes are paid by the buyer."],["What duties and taxes should I expect?","They depend on your country, the car's value, age and engine. We help you estimate costs before you commit."],["Do you provide an inspection report?","Yes. Each car comes with a multi-point inspection report covering mechanics, electronics, bodywork and interior, with photos."],["Can I inspect the car myself?","Yes. You can visit a showroom or send an independent inspector. We can also arrange a live video walk-around."],["Is there a warranty?","Eligible cars carry warranty cover. The exact terms are stated on your invoice before you pay."],["What does the warranty cover?","Cover varies by car and is listed in your sales agreement. Ask your advisor for the specific terms."],["What is your return policy?","Return and cancellation terms are agreed in writing before purchase. Please review them with your advisor."],["Can I book a test drive?","Yes, by appointment at our Abuja, Lagos and Dubai locations."],["Can I reserve a car before paying in full?","Yes. A deposit can hold a car for an agreed period, with terms confirmed in writing."],["Can you source a car that is not listed?","Yes. Tell us the make, model, spec and budget and our sourcing team will search for it."],["Do you accept trade-ins?","Send us your car's details and photos for a valuation."],["Are the cars new or used?","We offer both. Each listing's year and condition are confirmed before you book."],["Do the cars come with full documents?","Yes. We provide the paperwork required for registration and import, including title and invoice."],["Is insurance included in shipping?","Insurance for transit is available. Ask your advisor to include full-value cover."],["Can I track my shipment?","Yes. We share updates at each stage, including departure, arrival and clearing."],["Do you deliver to my door?","Yes. Doorstep delivery is available within Nigeria and in many international destinations."],["How can I contact support?","Use the WhatsApp, Call or Email buttons on any page. We reply as quickly as possible."]];
+const faqs=()=>`<div class="w" style="max-width:900px">${sh("FAQs","Everything You Need To Know")}${FQ.map(f=>`<details class="r"><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join("")}</div>`;
+const LOC=[["Main Office","Plot 12, Adetokunbo Ademola Crescent, Wuse 2, Abuja, FCT, Nigeria"],["Branch 1","Admiralty Way, Lekki Phase 1, Lagos, Nigeria"],["Branch 2","Business Bay, Dubai, UAE"]];
+const contact=()=>`<div class="w">${sh("Contacts &amp; Locations","Get In Touch")}<div class="bw" style="justify-content:center;margin-bottom:12px"><a class="btn" target="_blank" href="${wa("Hello Veltron Autos, I want to enquire about a luxury car.")}">WhatsApp</a><a class="btn o" href="tel:+${PH}">Call +234 706 520 5154</a><a class="btn o" href="mailto:${EM}">Email Us</a></div><p class="sub">Opening hours: Monday–Saturday 9am – 8pm · Sunday 12pm – 6pm</p>
+<div class="g2" style="align-items:start"><form class="cd p r" action="https://formsubmit.co/${EM}" method="POST"><h3 class="gt" style="margin-bottom:10px">Send A Message</h3><input name="name" placeholder="Name" required><input name="email" type="email" placeholder="Email" required><input name="phone" placeholder="Phone"><textarea name="message" rows="5" placeholder="Message" required></textarea><input type="hidden" name="_subject" value="New enquiry from Veltron Autos website"><button class="btn" type="submit" style="margin-top:8px">Send Message</button></form>
+<div class="r">${LOC.map(l=>`<div class="cd" style="margin-bottom:16px"><div class="p"><h3 style="color:var(--gold);font-size:16px">${l[0]}</h3><p style="margin-bottom:10px">${l[1]}</p></div><iframe loading="lazy" title="${l[0]}" src="https://maps.google.com/maps?q=${encodeURIComponent(l[1])}&output=embed"></iframe></div>`).join("")}</div></div></div>`;
+const foot=()=>`<footer><div class="bl" style="justify-content:center;margin-bottom:14px"><svg viewBox="0 0 120 120" style="width:60px;height:60px"><use href="#lg"/></svg></div><h3 class="gt" style="letter-spacing:6px">VELTRON AUTOS</h3><p style="margin:10px 0">Drive The Extraordinary</p><p>${EM} · +234 706 520 5154</p><div class="wm">@veltron autos</div></footer>`;
+/* behaviour */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+function count(){document.querySelectorAll("[data-n]").forEach(e=>{const n=+e.dataset.n,s=Math.ceil(n/60);let c=0;const t=setInterval(()=>{c=Math.min(n,c+s);e.textContent=c;if(c>=n)clearInterval(t)},28)})}
+let tm;function auto(){clearInterval(tm);const s=$("#sl");if(!s)return;tm=setInterval(()=>{s.scrollBy({left:s.scrollLeft+s.clientWidth+10>=s.scrollWidth?-s.scrollWidth:320,behavior:"smooth"})},4500)}
+function route(){const h=(location.hash||"#home").slice(1);let html;
+if(h.startsWith("b-")){const i=B.findIndex(b=>"b-"+slug(b[0])===h);html=i>=0?brandPg(i):coll()}
+else html=({home,collections:coll,about,faqs,contact}[h]||home)();
+app.innerHTML=html+foot();
+document.querySelectorAll("nav a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+(h.startsWith("b-")?"collections":h)));
+document.querySelectorAll(".r").forEach(e=>io.observe(e));window.scrollTo(0,0);count();auto()}
 addEventListener("hashchange",route);route();
-addEventListener("scroll",function(){document.querySelector(".hero")&&0});
-setTimeout(function(){ld.style.opacity=0;setTimeout(function(){ld.remove()},800)},1800);
-document.addEventListener("click",function g(){if(spoke)return;spoke=true;say("Welcome to Veltron Autos, home of luxury. Browse our collections, choose your dream car, and book instantly via WhatsApp or email. We deliver worldwide.")},{once:true});
+setTimeout(()=>{$("#ld").style.opacity=0;setTimeout(()=>$("#ld").remove(),900)},2000);
+let spoke=false;
+["pointerdown","keydown"].forEach(ev=>addEventListener(ev,()=>{if(spoke)return;spoke=true;say("Welcome to Veltron Autos, home of luxury. Browse our collections, choose your dream car, and book instantly via WhatsApp or email. We deliver worldwide.")},{once:true}));
 </script></body></html>
